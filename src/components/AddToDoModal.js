@@ -14,6 +14,9 @@ function AddToDoModal({handleModal, addToDos}) {
     }
 
     addToDos(todo)
+
+    handleModal(e)
+
   }
 
   return (

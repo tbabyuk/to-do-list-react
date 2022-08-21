@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --not-started: #F8D7DA;
+  --in-progress: #FFF3CD;
+  --completed: #D1E7DD;
+}
+
+/* colors */
+#todo-not-started {
+  background-color: var(--not-started);
+}
+
+#todo-in-progress {
+  background-color: var(--in-progress);
+}
+
+#todo-completed {
+  background-color: var(--completed);
+}
+
 
 body {
   background: rgb(37, 37, 110);

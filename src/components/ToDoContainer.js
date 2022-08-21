@@ -3,7 +3,6 @@ import React from 'react'
 import ToDoItem from './ToDoItem'
 
 function ToDoContainer({handleModal, toDos, handleDelete}) {
-    console.log('from container', toDos)
 
   return (
     <div className='to-do-container'>
