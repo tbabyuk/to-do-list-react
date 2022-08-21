@@ -1,11 +1,12 @@
 import React from 'react';
 
+function ToDoItem({ task, date }) {
+    console.log('from todo item', typeof toDos)
 
-function ToDoItem() {
   return (
     <div className='to-do-item'>
-      <h3>Buy groceries</h3>
-      <p>Due Date</p>
+            <h3>{task}</h3>
+            <p>{date}</p>
     </div>
   );
 }

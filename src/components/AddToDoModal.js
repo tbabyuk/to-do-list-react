@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-function AddToDoModal({handleModal}) {
+function AddToDoModal({handleModal, addToDos}) {
 
   const [task, setTask] = useState('');
   const [date, setDate] = useState('');
@@ -13,7 +13,7 @@ function AddToDoModal({handleModal}) {
       date: date
     }
 
-    console.log(todo)
+    addToDos(todo)
   }
 
   return (
