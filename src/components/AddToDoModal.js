@@ -1,22 +1,32 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-
-function AddToDoModal({handleModal, addToDos}) {
-
+function AddToDoModal({ handleModal, addToDos }) {
   const [task, setTask] = useState('');
   const [date, setDate] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const todo = {
-      task: task,
-      date: date
+
+    if (task && date) {
+      const todo = {
+        task: task,
+        date: date,
+      };
+      addToDos(todo);
+    } else {
+      setError('Please enter task and date before pressing submit')
     }
+  };
 
-    addToDos(todo)
 
-    handleModal(e)
-
+  const handleTask = (e) => {
+    setTask(e.target.value)
+    if(e.target.value.length === e.target.maxLength) {
+      setError("You've reached the maximum allowed characters!")
+    } else {
+      setError("")
+    }
   }
 
   return (
@@ -26,13 +36,27 @@ function AddToDoModal({handleModal, addToDos}) {
         <form className='add-to-do-form' onSubmit={handleSubmit}>
           <div className='input-group'>
             <label htmlFor='task'>Task:</label>
-            <input type='text' id='task' onChange={(e) => setTask(e.target.value)} value={task}/>
+            <input
+              className='rounded'
+              type='text'
+              id='task'
+              onChange={handleTask}
+              value={task}
+              maxLength={30}
+            />
           </div>
           <div className='input-group'>
             <label htmlFor='due-date'>Due Date:</label>
-            <input type='date' id='due-date' onChange={(e) => setDate(e.target.value)} value={date} />
+            <input
+              className='rounded'
+              type='date'
+              id='due-date'
+              onChange={(e) => setDate(e.target.value)}
+              value={date}
+            />
           </div>
-          <button>Submit</button>
+          <button className="btn btn-success mb-3">Add Task</button>
+          <small className="text-danger mt-0">{error}</small>
         </form>
       </div>
     </div>

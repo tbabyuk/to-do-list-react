@@ -1,13 +1,14 @@
 import AddToDoModal from "./components/AddToDoModal";
 import ToDoContainer from "./components/ToDoContainer";
 import {useState} from 'react';
+import {nanoid} from 'nanoid';
 
 function App() {
 
   const [modal, setModal] = useState(false);
   const [toDos, setToDos] = useState([
-    {task: "buy groceries", date: "8/23/22", id: 1},
-    {task: "call grandpa", date: "8/24/22", id: 2}
+    {task: "buy groceries", date: "2022-08-22", id: nanoid()},
+    {task: "call grandpa", date: "2022-08-23", id: nanoid()}
   ]);
 
   const handleDelete = (id) => {
@@ -25,9 +26,8 @@ function App() {
   }
 
   const addToDos = (todo) => {
-    todo.id = toDos.length + 1;
+    todo.id = nanoid();
     setToDos([...toDos, todo]);
-    console.log(123)
     setModal(false)
   }
 

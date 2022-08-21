@@ -4,28 +4,22 @@
   box-sizing: border-box;
 }
 
-:root {
-  --not-started: #F8D7DA;
-  --in-progress: #FFF3CD;
-  --completed: #D1E7DD;
-}
+/* progress colors */
 
-/* colors */
 #todo-not-started {
-  background-color: var(--not-started);
+  background-color: #F8D7DA;
 }
 
 #todo-in-progress {
-  background-color: var(--in-progress);
+  background-color: #FFF3CD;
 }
 
 #todo-completed {
-  background-color: var(--completed);
+  background-color: #D1E7DD;
 }
 
-
 body {
-  background: rgb(37, 37, 110);
+  background: rgb(31, 31, 73);
   display: grid;
   place-items: center;
   height: 100vh;
@@ -51,6 +45,10 @@ body {
   cursor: pointer;
 }
 
+select, option {
+  cursor: pointer;
+}
+
 
 
 /* Add To Do Modal */
@@ -67,12 +65,13 @@ body {
 }
 
 .add-to-do-container {
-  background: rgb(196, 200, 196);
+  background: hsl(240, 40%, 40%);
   height: 400px;
   width: 400px;
   border-radius: 15px;
   display: grid;
   place-items: center;
+  color: white;
 }
 
 .add-to-do-form {
