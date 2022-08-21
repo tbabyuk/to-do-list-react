@@ -13,22 +13,26 @@ body {
 }
 
 .to-do-container {
-  width: 500px;
+  width: 600px;
   height: 600px;
   text-align: center;
 }
 
-.to-do-item {
-  background: blue;
-  width: 90%;
-  height: 50px;
-  margin: 10px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 15px;
-  border-radius: 8px;
+/* To Do Item Styling */
+
+.task-text {
+  font-weight: bold;
 }
+
+.delete-todo-button {
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
 
 /* Add To Do Modal */
 
