@@ -1,6 +1,6 @@
 
-import React from 'react'
-import ToDoItem from './ToDoItem'
+import React from 'react';
+import ToDoItem from './ToDoItem';
 
 function ToDoContainer({handleModal, toDos, handleDelete}) {
 
