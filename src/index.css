@@ -6,15 +6,15 @@
 
 /* progress colors */
 
-#todo-not-started {
+#not-started {
   background-color: #F8D7DA;
 }
 
-#todo-in-progress {
+#in-progress {
   background-color: #FFF3CD;
 }
 
-#todo-completed {
+#completed {
   background-color: #D1E7DD;
 }
 
